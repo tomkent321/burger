@@ -11,14 +11,14 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
+    console.log("hbs object: " ,hbsObject);
     res.render("index", hbsObject);
   });
 });
 
 router.post("/api/burgers", function(req, res) {
   burger.create([
-    "burger_name", "devoured"
+    "burger", "devoured"
   ], [
     req.body.burger_name, req.body.devoured
   ], function(result) {
